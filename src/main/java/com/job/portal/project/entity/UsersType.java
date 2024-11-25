@@ -20,9 +20,9 @@ public class UsersType {
     public UsersType() {
     }
 
-    public UsersType(String userTypeName, int userTypeId, List<Users> users) {
-        this.userTypeName = userTypeName;
+    public UsersType(int userTypeId, String userTypeName, List<Users> users) {
         this.userTypeId = userTypeId;
+        this.userTypeName = userTypeName;
         this.users = users;
     }
 

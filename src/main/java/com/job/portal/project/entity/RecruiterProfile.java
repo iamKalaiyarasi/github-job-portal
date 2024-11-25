@@ -33,11 +33,11 @@ public class RecruiterProfile {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.state = state;
         this.city = city;
+        this.state = state;
         this.country = country;
-        this.profilePhoto = profilePhoto;
         this.company = company;
+        this.profilePhoto = profilePhoto;
     }
 
     public RecruiterProfile(Users users){
@@ -114,6 +114,12 @@ public class RecruiterProfile {
 
     public void setProfilePhoto(String profilePhoto) {
         this.profilePhoto = profilePhoto;
+    }
+
+    @Transient
+    public String getPhotosImagePath(){
+        if (profilePhoto == null) return null;
+        return "/photos/recruiter/" + userAccountId + "/" + profilePhoto;
     }
 
     @Override
