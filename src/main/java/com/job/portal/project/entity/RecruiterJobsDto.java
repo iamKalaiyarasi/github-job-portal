@@ -8,11 +8,11 @@ public class RecruiterJobsDto {
     private JobLocation jobLocationId;
     private JobCompany jobCompanyId;
 
-    public RecruiterJobsDto(Long totalCandidates, Integer jobPostId, JobLocation jobLocationId, String jobTitle, JobCompany jobCompanyId) {
+    public RecruiterJobsDto(Long totalCandidates, Integer jobPostId, String jobTitle, JobLocation jobLocationId, JobCompany jobCompanyId) {
         this.totalCandidates = totalCandidates;
         this.jobPostId = jobPostId;
-        this.jobLocationId = jobLocationId;
         this.jobTitle = jobTitle;
+        this.jobLocationId = jobLocationId;
         this.jobCompanyId = jobCompanyId;
     }
 
@@ -48,11 +48,11 @@ public class RecruiterJobsDto {
         this.jobLocationId = jobLocationId;
     }
 
-    public JobCompany getJobCompany() {
+    public JobCompany getJobCompanyId() {
         return jobCompanyId;
     }
 
-    public void setJobCompany(JobCompany jobCompanyId) {
+    public void setJobCompanyId(JobCompany jobCompanyId) {
         this.jobCompanyId = jobCompanyId;
     }
 }

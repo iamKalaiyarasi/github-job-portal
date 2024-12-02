@@ -13,7 +13,6 @@ public class JobPostActivityService {
 
     private final JobPostActivityRepository jobPostActivityRepository;
 
-    @Autowired
     public JobPostActivityService(JobPostActivityRepository jobPostActivityRepository) {
         this.jobPostActivityRepository = jobPostActivityRepository;
     }
@@ -33,8 +32,13 @@ public class JobPostActivityService {
             JobLocation loc = new JobLocation(rec.getLocationId(), rec.getCity(), rec.getState(), rec.getCountry());
             JobCompany comp = new JobCompany(rec.getCompanyId(), rec.getName(), "");
             recruiterJobsDtoList.add(new RecruiterJobsDto(rec.getTotalCandidates(), rec.getJob_post_id(),
-                    loc, rec.getJob_title(), comp));
+                     rec.getJob_title(), loc, comp));
         }
         return recruiterJobsDtoList;
+    }
+
+    public JobPostActivity getOne(int id) {
+
+        return jobPostActivityRepository.findById(id).orElseThrow(() -> new RuntimeException("Job not found"));
     }
 }
